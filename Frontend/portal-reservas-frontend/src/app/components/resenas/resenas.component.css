@@ -1,0 +1,84 @@
+/* Formulario de reseñas */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+form button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+form button:hover:enabled {
+    background-color: #45a049;
+}
+
+/* Contenedor de reseñas */
+.resenas-list {
+    margin-top: 30px;
+}
+
+.resena-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #4caf50;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.resena-container:hover {
+    transform: translateY(-5px);
+}
+
+.resena-container p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.resena-container strong {
+    color: #4caf50;
+    font-weight: bold;
+}

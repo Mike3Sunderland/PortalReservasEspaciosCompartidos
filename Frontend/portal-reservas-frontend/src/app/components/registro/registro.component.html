@@ -1,0 +1,16 @@
+<div class="registro-container">
+  <h2>Registro</h2>
+  <form (ngSubmit)="registrar()">
+    <div class="form-group">
+      <label for="email">Correo Electrónico</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" [(ngModel)]="contrasena" name="contrasena" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+  </form>
+  <p class="text-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+  <p>¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesión aquí</a></p>
+</div>

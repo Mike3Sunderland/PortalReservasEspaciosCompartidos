@@ -1,0 +1,11 @@
+<nav>
+    <ul class="nav-list">
+        <li class="nav-item" *ngIf="isAuthenticated"><a routerLink="/espacios" routerLinkActive="active">Espacios</a></li>
+        <li class="nav-item" *ngIf="isAuthenticated"><a routerLink="/perfil" routerLinkActive="active">Profile</a></li>
+        <li class="nav-item" *ngIf="isAuthenticated"><a routerLink="/reservas" routerLinkActive="active">Reservas</a></li>
+        <li class="nav-item" *ngIf="isAuthenticated"><a routerLink="/resenas" routerLinkActive="active">Reseñas</a></li>
+        <li class="nav-item" *ngIf="isAuthenticated"><a (click)="logout()">Logout</a></li>
+        <li class="nav-item" *ngIf="!isAuthenticated"><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li class="nav-item" *ngIf="!isAuthenticated"><a routerLink="/registro" routerLinkActive="active">Register</a></li>
+    </ul>
+</nav>

@@ -1,0 +1,33 @@
+<form (ngSubmit)="crearReserva()">
+  <label for="fecha">Fecha:</label>
+  <input id="fecha" type="date" [(ngModel)]="nuevaReserva.fecha" name="fecha" required>
+
+  <label for="horaInicio">Hora de Inicio:</label>
+  <input id="horaInicio" type="time" [(ngModel)]="nuevaReserva.horaInicio" name="horaInicio" required>
+
+  <label for="horaFin">Hora de Fin:</label>
+  <input id="horaFin" type="time" [(ngModel)]="nuevaReserva.horaFin" name="horaFin" required>
+
+  <label for="espacio">Espacio:</label>
+  <select id="espacio" [(ngModel)]="nuevaReserva.espacio_nombre" name="espacio_nombre" required>
+    <option *ngFor="let espacio of espacios" [value]="espacio.nombre">{{ espacio.nombre }}</option>
+  </select>
+
+  <button type="submit">Crear Reserva</button>
+</form>
+
+
+<h2>Reservas Actuales</h2>
+<ul>
+  <div *ngFor="let reserva of reservas">
+    <p>Fecha: {{ reserva.fecha }}</p>
+    <p>Hora de Inicio: {{ reserva.horaInicio }}</p>
+    <p>Hora de Fin: {{ reserva.horaFin }}</p>
+    <h3>Detalles del Espacio Reservado</h3>
+    <p>Nombre del Espacio: {{ reserva.espacio.nombre }}</p>
+    <p>Ubicación: {{ reserva.espacio.ubicacion }}</p>
+    <p>Descripción: {{ reserva.espacio.descripcion }}</p>
+    <p>Precio por Hora: {{ reserva.espacio.precioPorHora }}</p>
+    <button (click)="cancelarReserva(reserva.id)">Cancelar Reserva</button>
+  </div>  
+</ul>

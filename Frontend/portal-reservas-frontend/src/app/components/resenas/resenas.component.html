@@ -1,0 +1,22 @@
+<form (ngSubmit)="crearResena()" #resenaForm="ngForm">
+  <label for="espacio_nombre">Nombre del Espacio:</label>
+  <select id="espacio_nombre" [(ngModel)]="nuevaResena.espacio_nombre" name="espacio_nombre" required>
+    <option *ngFor="let espacio of espacios" [value]="espacio.nombre">{{ espacio.nombre }}</option>
+  </select>
+
+  <label for="comentario">Comentario:</label>
+  <textarea id="comentario" [(ngModel)]="nuevaResena.comentario" name="comentario" required></textarea>
+
+  <label for="calificacion">Calificación:</label>
+  <input type="number" id="calificacion" [(ngModel)]="nuevaResena.calificacion" name="calificacion" min="1" max="5" required>
+
+  <button type="submit" [disabled]="!resenaForm.valid">Enviar Reseña</button>
+</form>
+
+<div class="resenas-list">
+  <div class="resena-container" *ngFor="let resena of resenas">
+    <p><strong>{{ resena.usuario_email }}</strong></p>
+    <p>{{ resena.comentario }}</p>
+    <p>Calificación: {{ resena.calificacion }}</p>
+  </div>
+</div>
